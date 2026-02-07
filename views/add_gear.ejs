@@ -1,0 +1,44 @@
+<%- include('layout/header') %>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow border-0">
+                <div class="card-body p-5">
+                    <h2 class="mb-4">List Your Gear</h2>
+                    <form action="/add" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Item Name</label>
+                                <input type="text" name="itemName" class="form-control" placeholder="e.g. Sony A7III Camera" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Price per Day ($)</label>
+                                <input type="number" name="pricePerDay" class="form-control" placeholder="25" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Equipment Photo</label>
+                            <input type="file" name="image" class="form-control" accept="image/*" required>
+                            <small class="text-muted">Upload a clear photo of the item.</small>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Initial Status</label>
+                            <select name="status" class="form-select">
+                                <option value="Available">Available for Rent</option>
+                                <option value="Maintenance">Under Maintenance</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary px-4">Post Listing</button>
+                            <a href="/" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('layout/footer') %>

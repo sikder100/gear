@@ -1,0 +1,42 @@
+<%- include('layout/header') %>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-primary">GearShare</h2>
+                        <p class="text-muted">Join the neighborhood rental community</p>
+                    </div>
+                    <form action="/auth/register" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">I want to...</label>
+                            <select name="role" class="form-select">
+                                <option value="user">Rent & List Items</option>
+                                <option value="admin">Moderate the Marketplace (Admin)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Create Account</button>
+                    </form>
+                    <div class="text-center mt-4">
+                        <span class="text-muted">Already have an account?</span> 
+                        <a href="/auth/login" class="text-decoration-none fw-bold">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('layout/footer') %>
